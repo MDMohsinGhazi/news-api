@@ -9,6 +9,7 @@ dotenv.config({ path: "./config/config.env" });
 // Router files
 const news = require("./router/news");
 const weather = require("./router/weather");
+const quotes = require("./router/quotes");
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use(express.json());
 //Mount router
 app.use("/news", news);
 app.use("/weather", weather);
+app.use("/quotes", quotes);
 
 app.all("*", (req, res, next) => {
   next(new ErrorResponse(`can't find ${req.originalUrl}`, 404));
