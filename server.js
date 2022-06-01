@@ -1,5 +1,6 @@
 const express = require("express");
 const dotenv = require("dotenv");
+const path = require("path");
 
 const errorHandler = require("./middleware/error");
 const ErrorResponse = require("./utils/errorResponse");
@@ -16,6 +17,9 @@ const app = express();
 
 // json parser
 app.use(express.json());
+
+//Static folder
+app.use(express.static(path.join(__dirname, "public")));
 
 //Mount router
 app.use("/news", news);
