@@ -2,6 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 
 const errorHandler = require("./middleware/error");
+const ErrorResponse = require("./utils/errorResponse");
 
 // Load environment variable
 dotenv.config({ path: "./config/config.env" });
