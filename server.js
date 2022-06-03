@@ -1,6 +1,8 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const path = require("path");
+const helmet = require("helmet");
+const favicon = require("serve-favicon");
 
 const errorHandler = require("./middleware/error");
 const ErrorResponse = require("./utils/errorResponse");
@@ -15,10 +17,14 @@ const quotes = require("./router/quotes");
 
 const app = express();
 
+//Set security header
+app.use(helmet());
+
 // json parser
 app.use(express.json());
 
 //Static folder
+app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
 app.use(express.static(path.join(__dirname, "public")));
 
 //Mount router
