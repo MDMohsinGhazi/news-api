@@ -2,6 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const path = require("path");
 const helmet = require("helmet");
+const cors = require("./utils/cors");
 const favicon = require("serve-favicon");
 
 const errorHandler = require("./middleware/error");
@@ -17,8 +18,16 @@ const quotes = require("./router/quotes");
 
 const app = express();
 
-//Set security header
-app.use(helmet());
+// Set security header
+app.use(
+  helmet({
+    crossOriginEmbedderPolicy: false,
+    CrossOriginResourcePolicy: "cross-origin",
+  })
+);
+// cors
+app.options("*", cors);
+app.use(cors);
 
 // json parser
 app.use(express.json());
