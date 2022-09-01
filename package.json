@@ -1,0 +1,33 @@
+{
+  "name": "news-api",
+  "version": "1.0.0",
+  "description": "google news api",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "NODE_ENV=production node server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MDMohsinGhazi/news-api.git"
+  },
+  "keywords": [
+    "news-api"
+  ],
+  "author": "MD Mohsin Ghazi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MDMohsinGhazi/news-api/issues"
+  },
+  "homepage": "https://github.com/MDMohsinGhazi/news-api#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "helmet": "^5.1.0",
+    "newsapi": "^2.4.1",
+    "nodemon": "^2.0.16",
+    "serve-favicon": "^2.5.0"
+  }
+}
